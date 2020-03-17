@@ -6,7 +6,7 @@ package pgl_4.uvsq21603794;
  */
 public class App 
 {
-    public static void main( String[] args )
+    public static void test( String[] args )
     {
         System.out.println( "Hello World!" );
         
