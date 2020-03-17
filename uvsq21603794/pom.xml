@@ -30,6 +30,15 @@
 			<plugin>
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>3.0.2</version>
+				<configuration>
+        			<archive>
+	          			<manifest>
+	            			<addClasspath>true</addClasspath>
+	            			<classpathPrefix>lib/</classpathPrefix>
+	            			<mainClass>com.pgl_4.uvsq21603794.ApplicationSingleton</mainClass>
+	         			 </manifest>
+        			</archive>
+      			</configuration>
 			</plugin>
 			<plugin>
 				<artifactId>maven-install-plugin</artifactId>
@@ -66,31 +75,37 @@
 	</build>
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+    	<groupId>junit</groupId>
+    	<artifactId>junit</artifactId>
+    	<version>4.12</version>
+   		<scope>test</scope>
+	</dependency>
   </dependencies>
   
   <reporting>
    <plugins>
+   		<plugin>
+        	<groupId>com.github.spotbugs</groupId>
+        	<artifactId>spotbugs-maven-plugin</artifactId>
+        	<version>3.1.12</version>
+      	</plugin>
+      
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>3.1.1</version>
-          <configuration>
-          	<configLocation>checkstyle.xml</configLocation>
-          </configuration>
-          <reportSets>
-            <reportSet>
-              <reports>
-                <report>checkstyle</report>
-              </reports>
-            </reportSet>
+        	<groupId>org.apache.maven.plugins</groupId>
+          	<artifactId>maven-checkstyle-plugin</artifactId>
+          	<version>3.1.1</version>
+          	<configuration>
+          		<configLocation>checkstyle.xml</configLocation>
+          	</configuration>
+          	<reportSets>
+            	<reportSet>
+              		<reports>
+                		<report>checkstyle</report>
+              		</reports>
+            	</reportSet>
           </reportSets>
         </plugin>
-      </plugins>
+    </plugins>
   </reporting>
   
 </project>
