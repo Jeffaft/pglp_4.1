@@ -6,9 +6,9 @@ import java.util.ArrayList;
 public class CompositePersonnels implements PersInterface {
 	private List<PersInterface> childPersonnels = new ArrayList<PersInterface>();
 	@Override
-	public void print() {
+	public void print_hierarchique() {
 		for(PersInterface p : childPersonnels) {
-			p.print();
+			p.print_hierarchique();
 		}
 	}
 	

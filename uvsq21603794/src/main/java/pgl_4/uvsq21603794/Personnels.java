@@ -11,8 +11,8 @@ public final class Personnels implements PersInterface{
 	private List<Integer> tel;
 	
 	@Override
-	public void print() {
-		System.out.println("Nom: " + nom +" prénom: "+ prenom);
+	public void print_hierarchique() {
+		System.out.println("Nom: " + nom +" prénom: "+ prenom + " Fonction: " + fonctions);
 	}
 	public static class Builder {
 		private final String nom;
@@ -20,16 +20,12 @@ public final class Personnels implements PersInterface{
 		private String fonctions;
 		private LocalDate date;
 		private List<Integer>tel;
-		public Builder(String n,String p) {
+		public Builder(String n,String p,String f) {
 			nom = n;
 			prenom = p;
-		}
-		
-		public Builder fonctions(String f) {
 			fonctions = f;
-			return this;
 		}
-		
+			
 		public Builder date(LocalDate d) {
 			date = d;
 			return this;
